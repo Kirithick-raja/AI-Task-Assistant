@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Task & Behavior Assistant</title>
+<link rel="stylesheet" href="style.css">
+<!-- FullCalendar via CDN - no build tools needed -->
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>AI Task &amp; Behavior Assistant</h1>
+  <button id="generateBtn">Generate Smart Schedule</button>
+</header>
+
+<main>
+  <section id="taskFormSection">
+    <h2>Add a Task</h2>
+    <form id="taskForm">
+      <input type="text" id="title" placeholder="Task title" required>
+      <textarea id="description" placeholder="Description"></textarea>
+
+      <label>Category
+        <input type="text" id="category" placeholder="e.g. Work, Study">
+      </label>
+
+      <label>Priority
+        <select id="priority">
+          <option>Low</option>
+          <option selected>Medium</option>
+          <option>High</option>
+        </select>
+      </label>
+
+      <label>Energy level needed
+        <select id="energy_level">
+          <option>Low</option>
+          <option selected>Medium</option>
+          <option>High</option>
+        </select>
+      </label>
+
+      <label>Duration (minutes)
+        <input type="number" id="duration_minutes" value="30" min="5">
+      </label>
+
+      <label>Deadline
+        <input type="datetime-local" id="deadline">
+      </label>
+
+      <button type="submit">Add Task</button>
+    </form>
+  </section>
+
+  <section id="taskListSection">
+    <h2>Your Tasks</h2>
+    <ul id="taskList"></ul>
+  </section>
+
+  <section id="calendarSection">
+    <h2>Your Calendar</h2>
+    <div id="calendar"></div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
